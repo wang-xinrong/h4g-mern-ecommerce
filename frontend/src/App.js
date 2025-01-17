@@ -11,6 +11,7 @@ import { useFetchLoggedInUserDetails } from "./hooks/useAuth/useFetchLoggedInUse
 import { AddProductPage, AdminOrdersPage, CartPage, CheckoutPage, ForgotPasswordPage, HomePage, LoginPage, OrderSuccessPage, OtpVerificationPage, ProductDetailsPage, ProductUpdatePage, ResetPasswordPage, SignupPage, UserOrdersPage, UserProfilePage, WishlistPage } from './pages';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 import { ContactPage } from './pages/ContactPage';
+import { ProductConfirmPage } from './pages/ConfirmationPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 
@@ -34,7 +35,6 @@ function App() {
         <Route path='/reset-password/:userId/:passwordResetToken' element={<ResetPasswordPage/>}/>
         <Route exact path='/logout' element={<Protected><Logout/></Protected>}/>
         <Route exact path='/product-details/:id' element={<Protected><ProductDetailsPage/></Protected>}/>
-        <Route path='/contact' element={<ContactPage/>}/>
 
         {
           loggedInUser?.isAdmin?(
@@ -56,6 +56,8 @@ function App() {
             <Route path='/order-success/:id' element={<Protected><OrderSuccessPage/></Protected>}/>
             <Route path='/orders' element={<Protected><UserOrdersPage/></Protected>}/>
             <Route path='/wishlist' element={<Protected><WishlistPage/></Protected>}/>
+            <Route path='/contact' element={<Protected><ContactPage/></Protected>}/>
+            <Route path='/confirm' element={<Protected><ProductConfirmPage/></Protected>}/>
             </>
           )
         }
