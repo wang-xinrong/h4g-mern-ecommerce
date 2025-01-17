@@ -10,6 +10,8 @@ import { useAuthCheck } from "./hooks/useAuth/useAuthCheck";
 import { useFetchLoggedInUserDetails } from "./hooks/useAuth/useFetchLoggedInUserDetails";
 import { AddProductPage, AdminOrdersPage, CartPage, CheckoutPage, ForgotPasswordPage, HomePage, LoginPage, OrderSuccessPage, OtpVerificationPage, ProductDetailsPage, ProductUpdatePage, ResetPasswordPage, SignupPage, UserOrdersPage, UserProfilePage, WishlistPage, VoucherPage} from './pages';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
+import { ContactPage } from './pages/ContactPage';
+import { ProductConfirmPage } from './pages/ConfirmationPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 
@@ -55,6 +57,8 @@ function App() {
             <Route path='/orders' element={<Protected><UserOrdersPage/></Protected>}/>
             <Route path='/voucher' element={<Protected><VoucherPage/></Protected>}/>
             <Route path='/wishlist' element={<Protected><WishlistPage/></Protected>}/>
+            <Route path='/contact' element={<Protected><ContactPage/></Protected>}/>
+            <Route path='/confirm' element={<Protected><ProductConfirmPage/></Protected>}/>
             </>
           )
         }
