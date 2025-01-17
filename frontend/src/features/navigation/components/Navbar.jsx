@@ -105,8 +105,8 @@ export const Navbar=({isProductList=false})=> {
               ))}
 
             </Menu>
-            {/* <Typography variant='h6' fontWeight={300}>{is480?`${userInfo?.name.toString().split(" ")[0]}`:`Hey👋, ${userInfo?.name}`}</Typography>
-            {loggedInUser.isAdmin && <Button variant='contained'>Admin</Button>} */}
+            {!loggedInUser?.isAdmin && <Typography variant='h6' fontWeight={300}>{is480?`${userInfo?.name.toString().split(" ")[0]}`:`Hey👋, ${userInfo?.name}`}</Typography>}
+            {/* {loggedInUser.isAdmin && <Button variant='contained'>Admin</Button>} */}
             <Stack sx={{flexDirection:"row",columnGap:"1rem",alignItems:"center",justifyContent:"center"}}>
 
             {   // will need to change '50000' to actual balance
@@ -120,6 +120,7 @@ export const Navbar=({isProductList=false})=> {
             }
 
             {
+              loggedInUser?.isAdmin &&
               <Tooltip title="Users">
                 <IconButton onClick={()=>navigate("/")}>
                   Manage Users
@@ -128,6 +129,7 @@ export const Navbar=({isProductList=false})=> {
             }
 
             {
+              loggedInUser?.isAdmin &&
               <Tooltip title="Orders">
                 <IconButton onClick={()=>navigate("/admin/orders")}>
                   Manage Orders
@@ -136,6 +138,7 @@ export const Navbar=({isProductList=false})=> {
             }
 
             {
+              loggedInUser?.isAdmin &&
               <Tooltip title="Products">
                 <IconButton onClick={()=>navigate("/")}>
                   Manage Products
@@ -143,7 +146,8 @@ export const Navbar=({isProductList=false})=> {
               </Tooltip>
             }
 
-{
+            { 
+              loggedInUser?.isAdmin &&
               <Tooltip title="Report">
                 <IconButton onClick={()=>navigate("/")}>
                   Generate Report
