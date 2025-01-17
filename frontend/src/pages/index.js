@@ -13,6 +13,7 @@ import { ResetPasswordPage } from "./ResetPasswordPage";
 import { SignupPage } from "./SignupPage";
 import { UserOrdersPage } from "./UserOrdersPage";
 import { UserProfilePage } from "./UserProfilePage";
+import { VoucherPage } from "./VoucherPage";
 import { WishlistPage } from "./WishlistPage";
 
 export {
@@ -30,6 +31,7 @@ export {
     ProductUpdatePage,
     AddProductPage,
     AdminOrdersPage,
+    VoucherPage,
     WishlistPage,
     OtpVerificationPage
 }

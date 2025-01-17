@@ -55,6 +55,7 @@ export const Navbar=({isProductList=false})=> {
 
   const settings = [
     {name:'Profile',to:loggedInUser?.isAdmin?"/admin/profile":"/profile"},
+    {name:'Vouchers',to:loggedInUser?.isAdmin?"/admin/voucher":"/voucher"},
     {name:loggedInUser?.isAdmin?'Orders':'My Orders',to:loggedInUser?.isAdmin?"/admin/orders":"/orders"},
     loggedInUser?.isAdmin?<></>:{name:'Wishlist',to:"/wishlist"},
     {name:'Logout',to:"/logout"},
