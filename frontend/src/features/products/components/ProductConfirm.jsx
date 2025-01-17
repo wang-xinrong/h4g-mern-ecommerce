@@ -76,9 +76,9 @@ export const ProductConfirm = () => {
     },[])
 
     return (
-        <Stack flexDirection={"column"} columnGap={is387?".3rem":"1.5rem"} width={'100%'} sx={{justifyContent:'center',alignItems:'center'}}>
+        <Stack height={"20rem"} flexDirection={"column"} columnGap={is387?".3rem":"1.5rem"} width={'100%'} sx={{justifyContent:'center',alignItems:'center'}}>
         <Typography>Would you like to confirm your order?</Typography>
-        <button style={{padding:"10px 15px",fontSize:"1.050rem",backgroundColor:"black",color:"white",outline:"none",border:'none',borderRadius:"8px"}} onClick={()=>navigate("/")}>Confirm Order</button>
+        <button style={{padding:"10px 15px",fontSize:"1.050rem",backgroundColor:"black",color:"white",outline:"none",border:'none',borderRadius:"8px"}} onClick={()=>navigate("/")}>Confirm</button>
         </Stack>
     )
     
