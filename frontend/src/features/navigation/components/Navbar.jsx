@@ -89,6 +89,7 @@ export const Navbar=({isProductList=false})=> {
               onClose={handleCloseUserMenu}
             >
 
+
               {
                 loggedInUser?.isAdmin && 
               
@@ -102,9 +103,10 @@ export const Navbar=({isProductList=false})=> {
                   <Typography component={Link} color={'text.primary'} sx={{textDecoration:"none"}} to={setting.to} textAlign="center">{setting.name}</Typography>
                 </MenuItem>
               ))}
+
             </Menu>
-            <Typography variant='h6' fontWeight={300}>{is480?`${userInfo?.name.toString().split(" ")[0]}`:`Hey👋, ${userInfo?.name}`}</Typography>
-            {loggedInUser.isAdmin && <Button variant='contained'>Admin</Button>}
+            {/* <Typography variant='h6' fontWeight={300}>{is480?`${userInfo?.name.toString().split(" ")[0]}`:`Hey👋, ${userInfo?.name}`}</Typography>
+            {loggedInUser.isAdmin && <Button variant='contained'>Admin</Button>} */}
             <Stack sx={{flexDirection:"row",columnGap:"1rem",alignItems:"center",justifyContent:"center"}}>
 
             {   // will need to change '50000' to actual balance
@@ -115,6 +117,38 @@ export const Navbar=({isProductList=false})=> {
                     <Typography variant='h6' fontWeight={300} fontSize={10}>{`${userInfo?.balance}`}</Typography>
                   </Stack>
                 </Tooltip>  
+            }
+
+            {
+              <Tooltip title="Users">
+                <IconButton onClick={()=>navigate("/")}>
+                  Manage Users
+                </IconButton>
+              </Tooltip>
+            }
+
+            {
+              <Tooltip title="Orders">
+                <IconButton onClick={()=>navigate("/admin/orders")}>
+                  Manage Orders
+                </IconButton>
+              </Tooltip>
+            }
+
+            {
+              <Tooltip title="Products">
+                <IconButton onClick={()=>navigate("/")}>
+                  Manage Products
+                </IconButton>
+              </Tooltip>
+            }
+
+{
+              <Tooltip title="Report">
+                <IconButton onClick={()=>navigate("/")}>
+                  Generate Report
+                </IconButton>
+              </Tooltip>
             }
 
             {
